@@ -138,4 +138,7 @@ All R code used in this analysis is included in the separate file:
 
 **[View R Code](r-code.md)**
 
+## Full Report
+
+**[View Full Time Series Analysis Report](uk-gas-time-series-report.pdf)**
 ---
