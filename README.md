@@ -53,7 +53,11 @@ Inputs consisted of the built-in UKgas quarterly dataset. The raw series showed:
 - increasing variance over time
 
 External economic factors were not modeled so the focus remained on pure time-series structure.
+### Raw Time Series
 
+<p align="center">
+  <img src="images/uk-gas-raw-series.png" width="500">
+</p>
 ---
 
 ## Methodology
