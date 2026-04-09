@@ -70,6 +70,35 @@ External economic factors were not modeled so the focus remained on pure time-se
 - Benchmarked against Holt–Winters exponential smoothing
 - Forecast horizon: 6 years (24 quarters)
 
+### Step 1 — Seasonal Differencing
+
+The first transformation removed quarterly seasonality from the raw series. While this reduced periodic structure, the series still showed unstable variance and was not yet fully stationary.
+
+<p align="center">
+  <img src="images/uk-gas-diff-1.png" width="500">
+</p>
+
+<p align="center"><em>Figure 2. UK Gas series after seasonal differencing (lag = 4).</em></p>
+
+### Step 2 — Log Transformation + Seasonal Differencing
+
+To stabilize the increasing variance, I applied a log transformation before differencing. This improved the spread of the series, but stationarity was still not fully achieved.
+
+<p align="center">
+  <img src="images/uk-gas-diff-log.png" width="500">
+</p>
+
+<p align="center"><em>Figure 3. Log-transformed UK Gas series after seasonal differencing.</em></p>
+
+### Step 3 — Final Stationary Series
+
+A second differencing step produced the final stationary series used for model identification. This version was suitable for ACF/PACF analysis and SARIMA fitting.
+
+<p align="center">
+  <img src="images/uk-gas-diff-final.png" width="420">
+</p>
+
+<p align="center"><em>Figure 4. Final stationary transformed series used for model estimation.</em></p>
 ---
 
 ## Results
@@ -83,7 +112,25 @@ External economic factors were not modeled so the focus remained on pure time-se
 **Insight:**  
 Energy demand is driven more by repeating human seasonal patterns than short-term noise; removing seasonality first was critical to reliable forecasts.
 
----
+### Residual Diagnostics
+
+Residual checks showed that the fitted model captured the main structure of the data well. The residual series behaved approximately like white noise, supporting the adequacy of the final SARIMA specification.
+
+<p align="center">
+  <img src="images/uk-gas-residual-diagnostics.png" width="850">
+</p>
+
+<p align="center"><em>Figure 5. Residual diagnostics for the final SARIMA model.</em></p>
+
+### Forecast Output
+
+The final model generated 24-quarter forecasts that preserved the strong recurring seasonal cycle seen in the historical series. Confidence intervals widened gradually while maintaining stable seasonal oscillations.
+
+<p align="center">
+  <img src="images/uk-gas-forecast.png" width="1000">
+</p>
+
+<p align="center"><em>Figure 6. Multi-year forecast from the final ARIMA(1,0,0)(0,1,0)[4] model.</em></p>
 
 ## Full R Code
 
