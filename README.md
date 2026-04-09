@@ -132,13 +132,12 @@ The final model generated 24-quarter forecasts that preserved the strong recurri
 
 <p align="center"><em>Figure 6. Multi-year forecast from the final ARIMA(1,0,0)(0,1,0)[4] model.</em></p>
 
-## Full R Code
-
-All R code used in this analysis is included in the separate file:
-
-**[View R Code](r-code.md)**
-
 ## Full Report
 
-**[View Full Time Series Analysis Report](uk-gas-time-series-report.pdf)**
+**[View Final Report](uk-gas-time-series-report.pdf)**
+
 ---
+
+## Full Maple Code
+
+**[View R Code](r-code.md)**
