@@ -58,7 +58,7 @@ External economic factors were not modeled so the focus remained on pure time-se
 <p align="center">
   <img src="images/uk-gas-raw-series.png" width="500">
 </p>
----
+<p align="center"><em>Figure 1. Raw quarterly UK gas consumption series showing strong upward trend, pronounced seasonal fluctuations, and increasing variance over time.</em></p>
 
 ## Methodology
 
